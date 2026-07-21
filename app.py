@@ -66,14 +66,14 @@ student_dropout_app = gr.Interface(
         description = "Predict wether a student has High or Low dropout risk",
 )
 
-student_dropout_app.launch()
-
 import os
 
-port = int(os.environ.get("PORT", 7860))
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
 
-student_dropout_app.launch(
-    server_name="0.0.0.0",
-    server_port=port
-)
+    student_dropout_app.launch(
+        server_name="0.0.0.0",
+        server_port=port
+    )
+    
 
